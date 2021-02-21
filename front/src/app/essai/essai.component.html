@@ -1,0 +1,20 @@
+<h1>Integrate Angular with Flask Python</h1>
+<hr>
+
+<!-- <button (click)="readData()">Click here to fetch data from Flask</button>
+<hr> -->
+
+<table id="weather">
+        <tr>
+            <th *ngFor="let column of headers">
+                {{column}}
+            </th>
+        </tr>
+    
+        <tr *ngFor="let row of weather">
+            <td *ngFor="let col of headers">
+                {{row[col]}}
+            </td>
+        </tr>
+    
+</table>
