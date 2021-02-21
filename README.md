@@ -1,8 +1,7 @@
 # La Muse version Web
 Ce travail consiste à reproduire l'application python
 tirée du dépôt [https://github.com/lamiroy/LaMuse](https://github.com/lamiroy/LaMuse) en application web.  
-Nous utiliserons le mini-framework python flask pour gérér le coté serveur et le framework typescript Angular pour gérer le coté client. (vous pouvez suivre ce tuto pour l'installer :  
-[https://apcpedagogie.com/installation-dangular/](https://apcpedagogie.com/installation-dangular/).
+Nous utiliserons le mini-framework python flask pour gérér le coté serveur et le framework typescript Angular pour gérer le coté client. (vous pouvez suivre ce tuto pour l'installer : [https://apcpedagogie.com/installation-dangular/](https://apcpedagogie.com/installation-dangular/).
 
 # Equipe
 - HAUTIER Benjamin
