@@ -1,6 +1,7 @@
 # La Muse version Web
 Ce travail consiste à reproduire l'application python
-tirée du dépôt [https://github.com/lamiroy/LaMuse](https://github.com/lamiroy/LaMuse) en application web
+tirée du dépôt [https://github.com/lamiroy/LaMuse](https://github.com/lamiroy/LaMuse) en application web.  
+Nous utiliserons le mini-framework python flask pour gérér le coté serveur et le framework typescript Angular  pour gérer le coté client.
 
 # Equipe
 - HAUTIER Benjamin
@@ -11,8 +12,8 @@ tirée du dépôt [https://github.com/lamiroy/LaMuse](https://github.com/lamiroy
 # Execution du projet :
 ## back :
 - installer les deux modules suivants (à ne faire que pour la première exécution) :
-	- pip install Flask
-	- pip install flask_cors
+ -   pip install Flask
+ -   pip install flask_cors
 
 - lancer le serveur flask :  
 	py essai.py
