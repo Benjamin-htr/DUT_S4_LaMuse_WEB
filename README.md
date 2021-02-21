@@ -14,14 +14,14 @@ tirée du dépôt [https://github.com/lamiroy/LaMuse](https://github.com/lamiroy
 	- pip install Flask
 	- pip install flask_cors
 
-- lancer le serveur flask :
+- lancer le serveur flask :  
 	py essai.py
 
 ## front :
-- installer le module suivant :
+- installer le module suivant :  
 	npm install --save-dev @angular-devkit/build-angular
 
-- lancer le serveur angular :
+- lancer le serveur angular :  
 	ng serve --open
 
 
