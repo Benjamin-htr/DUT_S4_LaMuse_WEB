@@ -7,7 +7,8 @@ import { LaMuseCallService } from '../services/la-muse-call.service';
   styleUrls: ['./la-muse-exec.component.css']
 })
 export class LaMuseExecComponent implements OnInit {
-  title = 'Generate Images';
+  title : string = 'Generate Images';
+
 
   constructor(private rs : LaMuseCallService){}
 
@@ -19,7 +20,8 @@ export class LaMuseExecComponent implements OnInit {
         (
           (response) => 
           {
-            response[0];
+            console.log(response);
+            
           },
           (error) =>
           {

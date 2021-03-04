@@ -15,7 +15,7 @@ export class LaMuseCallService implements OnInit {
   
   executeLaMuse()
   {
-    return this.http.get(this.LaMuseUrl);
+    return this.http.get<any>(this.LaMuseUrl);
   }
 
 }

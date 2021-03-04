@@ -7,7 +7,9 @@ import subprocess
 
 app = Flask(__name__)
 # api=Api(app)
-CORS(app)
+CORS(app, #allow_headers = 'http://localhost:4200/GenerateImages'
+)
+
 
 weather = {
     "data": [
@@ -58,7 +60,8 @@ weather = {
 
 
 def run_command(command):
-    return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
+    #return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
+    return subprocess.run(command, shell=True, capture_output=True, timeout=120).stdout.read()
 
 
 @app.route("/", methods=['GET'])
@@ -72,8 +75,9 @@ def WeatherReport():
 
 @app.route("/LaMuse/", methods = ['GET'])
 def LaMuse():
-    return run_command('python3 -m LaMuse.LaMuse --nogui --input_dir Demo-test/Paintings --output_dir Demo-test/Interpretations --background_dir Demo-test/Backgrounds')
+    return jsonify(run_command('python3 -m LaMuse.LaMuse --nogui --input_dir Demo-test/Paintings --output_dir Demo-test/Interpretations --background_dir Demo-test/Backgrounds'))
     #return jsonify([weather])
+
 
 if __name__ == '__main__':
     app.run(debug=True, port = 5002)
