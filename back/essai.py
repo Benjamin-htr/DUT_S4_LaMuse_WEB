@@ -1,5 +1,7 @@
 from flask import Flask, jsonify;
 from flask_cors import CORS;
+from LaMuse import LaMuse;
+import subprocess
 # from flask_restful import Resource, Api;
 
 
@@ -55,6 +57,10 @@ weather = {
 }
 
 
+def run_command(command):
+    return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
+
+
 @app.route("/", methods=['GET'])
 def index():
     return "Welcome to Test";
@@ -63,6 +69,11 @@ def index():
 def WeatherReport():
     global weather
     return jsonify([weather])
+
+@app.route("/LaMuse/", methods = ['GET'])
+def LaMuse():
+    return run_command('python3 -m LaMuse.LaMuse --nogui --input_dir Demo-test/Paintings --output_dir Demo-test/Interpretations --background_dir Demo-test/Backgrounds')
+    #return jsonify([weather])
 
 if __name__ == '__main__':
     app.run(debug=True, port = 5002)
