@@ -12,4 +12,10 @@ export class LaMuseExecComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onFolderSelected(event){
+    if (event.target.files.length > 0){
+        let files = event.target.files;
+    }     
+}
+
 }
