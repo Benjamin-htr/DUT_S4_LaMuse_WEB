@@ -5,7 +5,7 @@ Nous utiliserons le mini-framework python flask pour gérér le coté serveur et
 
 # Equipe
 - HAUTIER Benjamin
-- DOMINGUEZ Loic
+- DOMINGUES Loic
 - DIEUDONNE César
 - DEBUIRE Maxime
 
