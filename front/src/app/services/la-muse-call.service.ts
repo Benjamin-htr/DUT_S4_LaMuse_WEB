@@ -1,10 +1,10 @@
-import { Injectable } from '@angular/core';
+import { Injectable, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
-export class LaMuseCallService {
+export class LaMuseCallService implements OnInit {
 
   constructor(private http : HttpClient) { }
 

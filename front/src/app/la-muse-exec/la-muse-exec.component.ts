@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LaMuseCallService } from '../services/la-muse-call.service';
 
 @Component({
   selector: 'app-la-muse-exec',
@@ -6,15 +7,32 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./la-muse-exec.component.css']
 })
 export class LaMuseExecComponent implements OnInit {
+  title = 'Generate Images';
 
-  constructor() { }
+  constructor(private rs : LaMuseCallService){}
+
+  
 
   ngOnInit(): void {
+    // this.rs.readWeather()
+    //   .subscribe
+    //     (
+    //       (response) => 
+    //       {
+    //         response[0]["data"];
+    //       },
+    //       (error) =>
+    //       {
+    //         console.log("No Data Found" + error);
+    //       }
+
+    //    )
   }
 
   onFolderSelected(event){
     if (event.target.files.length > 0){
         let files = event.target.files;
+        console.log(files);
     }     
 }
 

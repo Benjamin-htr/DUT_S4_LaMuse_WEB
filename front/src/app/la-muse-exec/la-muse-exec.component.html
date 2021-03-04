@@ -1,5 +1,11 @@
 <p>la-muse-exec works!</p>
 
-<label>Veuillez selectionner un répertoire </label>
+<label>Veuillez selectionner un répertoire </label><br />
+
+<input type="file" name="files" (change)="onFolderSelected($event)" webkitdirectory multiple/> <br />
+
+
+<label>Veuillez selectionner un répertoire </label><br />
 
 <input type="file" name="files" (change)="onFolderSelected($event)" webkitdirectory multiple/>
+
