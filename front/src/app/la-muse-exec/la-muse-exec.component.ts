@@ -14,12 +14,12 @@ export class LaMuseExecComponent implements OnInit {
   
 
   ngOnInit(): void {
-    this.rs.readWeather()
+    this.rs.executeLaMuse()
       .subscribe
         (
           (response) => 
           {
-            response[0]["data"];
+            response[0];
           },
           (error) =>
           {
