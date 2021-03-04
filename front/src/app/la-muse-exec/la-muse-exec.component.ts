@@ -31,4 +31,11 @@ export class LaMuseExecComponent implements OnInit {
         )
   }
 
+  onFolderSelected(event){
+    if (event.target.files.length > 0){
+        let files = event.target.files;
+        console.log(files);
+    }     
+}
+
 }
