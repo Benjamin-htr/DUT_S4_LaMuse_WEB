@@ -6,11 +6,13 @@ import { AppComponent } from './app.component';
 import { EssaiComponent } from './essai/essai.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { LaMuseExecComponent } from './la-muse-exec/la-muse-exec.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    EssaiComponent
+    EssaiComponent,
+    LaMuseExecComponent
   ],
   imports: [
     BrowserModule,
