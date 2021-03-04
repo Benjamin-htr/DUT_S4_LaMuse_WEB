@@ -13,7 +13,7 @@ export class LaMuseCallService implements OnInit {
 
   LaMuseUrl : string = "http://127.0.0.1:5002/LaMuse/";
   
-  readWeather()
+  executeLaMuse()
   {
     return this.http.get(this.LaMuseUrl);
   }
