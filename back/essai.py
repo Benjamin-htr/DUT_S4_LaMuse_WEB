@@ -1,6 +1,5 @@
 from flask import Flask, jsonify;
 from flask_cors import CORS;
-from LaMuse import LaMuse;
 import subprocess
 # from flask_restful import Resource, Api;
 
@@ -61,7 +60,7 @@ weather = {
 
 def run_command(command):
     #return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
-    return subprocess.run(command, shell=True, capture_output=True, timeout=120).stdout.read()
+    return subprocess.run(command, shell=True, stdout=subprocess.PIPE, timeout=240)
 
 
 @app.route("/", methods=['GET'])
@@ -75,8 +74,10 @@ def WeatherReport():
 
 @app.route("/LaMuse/", methods = ['GET'])
 def LaMuse():
-    return jsonify(run_command('python3 -m LaMuse.LaMuse --nogui --input_dir Demo-test/Paintings --output_dir Demo-test/Interpretations --background_dir Demo-test/Backgrounds'))
-    #return jsonify([weather])
+    run_command('export TFHUB_CACHE_DIR=./tmp')
+    proc = run_command('python3 -m LaMuse.LaMuse --nogui --input_dir Demo-test/Paintings --output_dir Demo-test/Interpretations --background_dir Demo-test/Backgrounds')
+    return proc.stdout
+    
 
 
 if __name__ == '__main__':

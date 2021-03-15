@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 
 const routes: Routes = [{ path: 'weather', component: EssaiComponent },
                       { path: 'GenerateImages', component: LaMuseExecComponent }
+                      //{path: '', redirectTo: '/weather', pathMatch: 'full'}
                     ];
 
 
