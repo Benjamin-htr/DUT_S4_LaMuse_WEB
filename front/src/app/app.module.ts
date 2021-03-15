@@ -7,12 +7,16 @@ import { EssaiComponent } from './essai/essai.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LaMuseExecComponent } from './la-muse-exec/la-muse-exec.component';
+import { WelcomeComponent } from './welcome/welcome.component';
+import { ChoiceComponent } from './choice/choice.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     EssaiComponent,
-    LaMuseExecComponent
+    LaMuseExecComponent,
+    WelcomeComponent,
+    ChoiceComponent
   ],
   imports: [
     BrowserModule,
