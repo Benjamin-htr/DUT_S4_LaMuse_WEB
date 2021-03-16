@@ -36,8 +36,26 @@ body {
 
 .node.light-blue {
     fill : #C0FFFB;
-    filter : url(#filter0_dddi) 
-    
-    
+    filter : url(#light-blue) ;
 }
+
+svg {
+  animation : scaleBubble 14s infinite;
+}
+
+@keyframes scaleBubble {
+    0% {
+      transform: scale(1.00);
+    }
+
+
+    50% {
+      transform: scale(1.20);
+    }
+
+  
+    100% {
+      transform: scale(1.00);
+    }
+  }
     
