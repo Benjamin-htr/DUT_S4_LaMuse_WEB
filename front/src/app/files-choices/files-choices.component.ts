@@ -4,6 +4,7 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-files-choices',
   templateUrl: './files-choices.component.html',
   styleUrls: ['./files-choices.component.css']
+  
 })
 export class FilesChoicesComponent implements OnInit {
 
