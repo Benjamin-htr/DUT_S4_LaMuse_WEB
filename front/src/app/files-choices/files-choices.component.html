@@ -1,0 +1,21 @@
+<p>file-choices works!</p>
+
+<!--<div>
+    <p>
+        <label>Choose backgrounds directory :</label><br>
+        <input type="file" name="files" (change)="envoiFichier($event)" webkitdirectory multiple/><br>
+    </p>
+
+    <p>
+        <label>Choose paintings directory :</label><br>
+        <input type="file" name="files" (change)="envoiFichier($event.target)" webkitdirectory multiple/><br>
+    </p>
+</div>-->
+<input type="file" id="file-selector" multiple>
+<script>
+  const fileSelector = document.getElementById('file-selector');
+  fileSelector.addEventListener('change', (event) => {
+    const fileList = event.target.files;
+    console.log(fileList);
+  });
+</script>

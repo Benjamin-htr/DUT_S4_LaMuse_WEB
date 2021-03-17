@@ -60,7 +60,7 @@ weather = {
 
 def run_command(command):
     #return subprocess.Popen(command, shell=True, stdout=subprocess.PIPE).stdout.read()
-    return subprocess.run(command, shell=True, stdout=subprocess.PIPE, timeout=240)
+    return subprocess.run(command, shell=True, timeout=240)
 
 
 @app.route("/", methods=['GET'])

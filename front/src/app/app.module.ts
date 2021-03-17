@@ -10,6 +10,8 @@ import { LaMuseExecComponent } from './la-muse-exec/la-muse-exec.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ChoiceComponent } from './choice/choice.component';
 import { AddToSvgDirective } from './welcome/add-to-svg.directive';
+import { ChangeFilterNodeDirective } from './welcome/change-filter-node.directive';
+import { FilesChoicesComponent } from './files-choices/files-choices.component';
 
 @NgModule({
   declarations: [
@@ -19,6 +21,8 @@ import { AddToSvgDirective } from './welcome/add-to-svg.directive';
     WelcomeComponent,
     ChoiceComponent,
     AddToSvgDirective,
+    ChangeFilterNodeDirective,
+    FilesChoicesComponent,
   ],
   imports: [
     BrowserModule,
