@@ -15,7 +15,7 @@ export class LaMuseExecComponent implements OnInit {
   
 
   ngOnInit(): void {
-    /* this.rs.executeLaMuse()
+    this.rs.executeLaMuse()
       .subscribe
         (
           (response) => 
@@ -28,14 +28,7 @@ export class LaMuseExecComponent implements OnInit {
             console.log("No Data Found" + error);
           }
 
-        ) */
+        )
   }
-
-  onFolderSelected(event){
-    if (event.target.files.length > 0){
-        let files = event.target.files;
-        console.log(files);
-    }     
-}
 
 }
