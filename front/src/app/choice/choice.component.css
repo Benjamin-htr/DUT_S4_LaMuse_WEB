@@ -1,9 +1,80 @@
 body { 
-    background: url(../../assets/background.png) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
+  background:
+  /* Assombrir le background */
+    linear-gradient(
+      rgba(0, 0, 0, 0.6), 
+      rgba(0, 0, 0, 0.6)
+    ),
+    url(../../assets/background.png);
+    background-position: center;
+    background-attachment: scroll;
     background-size: cover;
     height : 100vh;
+    color: #00EAF8;
+    text-align: center;
+    font-size: 150%;
+    text-shadow:
+    0 0 20px #fff,
+    0 0 40px #0ff,
+    0 0 80px #0ff,
+    0 0 100px #0ff,
+    0 0 150px #0ff;;
+}
 
-  }
+.bouton {
+  background: #555;
+  border-radius: 30%;
+  border-color: #00EAF8;
+  border-width: 6px;
+  cursor: pointer;
+  padding: 30px 30px;
+  box-shadow: 0px 0px 40px 5px #0ff;
+}
+
+.line {
+  width: 50%;
+  height: 1px;
+  background-color: #00EAF8;
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.bouton:active {
+  background: #000;
+  border-radius: 30%;
+  border-color: #00EAF8;
+  border-width: 6px;
+  cursor: pointer;
+  padding: 30px 30px;
+  box-shadow: 0px 0px 40px 5px #0ff;
+}
+
+h1, h2 {
+  margin-top: 0%;
+  padding-top: 10%;
+}
+
+
+svg {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.div-choix > div {
+  float: left;
+  margin-right: auto;
+  margin-left: auto;
+  width: 50%;
+}
+
+div:first-child {
+  height: 80vh;
+  width: 80vw;
+  margin-top: auto;
+  margin-bottom: auto;
+  margin-left: auto;
+  margin-right: auto;
+}
