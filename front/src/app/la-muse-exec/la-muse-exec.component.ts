@@ -10,7 +10,7 @@ import { LaMuseCallService } from '../services/la-muse-call.service';
 export class LaMuseExecComponent implements OnInit {
 
   source: string = "../../assets/giphy.gif";
-  constructor(private rs : LaMuseCallService,){}
+  constructor(private rs : LaMuseCallService){}
 
   ngOnInit(): void {
     this.rs.executeLaMuse('Default')

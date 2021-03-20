@@ -1,1 +1,16 @@
-<p>la-muse-exec-custom works!</p>
+<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="Expires" content="0">
+<html>
+    <body>
+        <div class = "images" *ngIf="!display">
+            <img class="back" [src]="back_src">
+            <img class="paint" [src]="paint_src">
+        </div>
+        <div class = "images" *ngIf="display">
+            <img class="result" [src]="result_src">
+        </div>
+        <p>The image is being created  ...</p>
+        <p class="wait">Please wait</p>
+    </body>
+</html>

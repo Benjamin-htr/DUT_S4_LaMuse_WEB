@@ -48,7 +48,7 @@ def WeatherReport():
 
 
 @app.route("/LaMuseDefault", methods = ['GET'])
-def LaMuse():
+def LaMuseDefault():
     os.system("export TFHUB_CACHE_DIR=./tmp")
     os.system("rm -f "+back_path+'*')
     os.system("rm -f "+paint_path+'*')
@@ -62,6 +62,21 @@ def LaMuse():
     print(paint_image)
     os.system("cp "+default_paint_path+paint_image+' '+paint_path)
 
+    command = 'python3 -m LaMuse.LaMuse --nogui --input_dir '+paint_path+' --output_dir '+result_path+' --background_dir '+back_path
+    os.system(command)
+    resp = jsonify(success=True)
+    resp.status_code = 200
+    return resp
+
+@app.route("/LaMuseCustom", methods = ['GET'])
+def LaMuseCustom():
+    print('CUSTOM')
+    os.system("export TFHUB_CACHE_DIR=./tmp")
+    os.system("rm -f "+result_path+'*')
+    back_img = os.listdir(back_path)[0]
+    print(back_img)
+    paint_img = os.listdir(paint_path)[0]
+    print(paint_img)
     command = 'python3 -m LaMuse.LaMuse --nogui --input_dir '+paint_path+' --output_dir '+result_path+' --background_dir '+back_path
     os.system(command)
     resp = jsonify(success=True)
@@ -84,6 +99,7 @@ def upload_Back():
             return redirect(request.url)
         if file and allowed_file(file.filename) :
             filename = secure_filename(file.filename)
+            print("back :", filename)
             os.system("rm -f "+back_path+'*')
             os.system("rm -f "+result_path+'*')
             
@@ -109,6 +125,7 @@ def upload_Paint():
             return redirect(request.url)
         if file and allowed_file(file.filename) :
             filename = secure_filename(file.filename)
+            print("paint :", filename)
             os.system("rm -f "+paint_path+'*')
             os.system("rm -f "+result_path+'*')
             
@@ -126,9 +143,27 @@ def get_image() :
     dirfiles = os.listdir(result_path)
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
-            if image.count('.') == 2:
+            if image.count('.') == 2 :
                 print(image)
                 return send_file(result_path+image, mimetype='')
+
+@app.route('/sendBackImg/', methods=['GET'])
+def get_back_img() :
+    dirfiles = os.listdir(back_path)
+    for image in dirfiles:
+        if (image.endswith(".jpg") or image.endswith(".png")):
+            print(image)
+            return send_file(back_path+image, mimetype='')
+    
+    #return send_file(back_path+image, mimetype='')
+
+@app.route('/sendPaintImg/', methods=['GET'])
+def get_paint_img() :
+    dirfiles = os.listdir(paint_path)
+    for image in dirfiles:
+        if (image.endswith(".jpg") or image.endswith(".png")):
+            print(image)
+            return send_file(paint_path+image, mimetype='')
 
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])
