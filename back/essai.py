@@ -1,61 +1,27 @@
-from flask import Flask, jsonify;
+import os
+from flask import Flask, jsonify, request, flash, redirect, url_for, send_from_directory;
 from flask_cors import CORS;
+from werkzeug.utils import secure_filename
+
+
 import subprocess
 # from flask_restful import Resource, Api;
 
+UPLOAD_FOLDER = './Demo-test/'
+ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 
 app = Flask(__name__)
+app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
+app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
 # api=Api(app)
-CORS(app, #allow_headers = 'http://localhost:4200/GenerateImages'
+CORS(app, #allow_headers = 'http://localhost:4200/'
 )
 
 
-weather = {
-    "data": [
-    {
-        "day": "1/6/2019",
-        "temperature": "23",
-        "windspeed": "16",
-        "event": "Sunny"
-    },
-    {
-        "day": "2/6/2019",
-        "temperature": "21",
-        "windspeed": "18",
-        "event": "Rainy"
-    },
-    {
-        "day": "3/6/2019",
-        "temperature": "31",
-        "windspeed": "12",
-        "event": "Sunny"
-    },
-    {
-        "day": "4/6/2019",
-        "temperature": "5",
-        "windspeed": "28",
-        "event": "Snow"
-    },
-    {
-        "day": "5/6/2019",
-        "temperature": "17",
-        "windspeed": "18",
-        "event": "Rainy"
-    },
-    {
-        "day": "6/6/2019",
-        "temperature": "19",
-        "windspeed": "21",
-        "event": "Rainy"
-    },
-    {
-        "day": "7/6/2019",
-        "temperature": "28",
-        "windspeed": "14",
-        "event": "Sunny"
-    }
-    ]
-}
+def allowed_file(filename):
+    return '.' in filename and \
+           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
+
 
 
 def run_command(command):
@@ -67,16 +33,42 @@ def run_command(command):
 def index():
     return "Welcome to Test";
 
-@app.route("/weatherReport/", methods = ['GET'])
-def WeatherReport():
-    global weather
-    return jsonify([weather])
 
 @app.route("/LaMuse/", methods = ['GET'])
 def LaMuse():
     run_command('export TFHUB_CACHE_DIR=./tmp')
     proc = run_command('python3 -m LaMuse.LaMuse --nogui --input_dir Demo-test/Paintings --output_dir Demo-test/Interpretations --background_dir Demo-test/Backgrounds')
     return proc.stdout
+
+
+@app.route('/uploadFile', methods=['GET', 'POST'])
+def upload_file():
+    if request.method == 'POST':
+        # check if the post request has the file part
+        if 'file' not in request.files:
+            flash('No file part')
+            return redirect(request.url)
+        file = request.files['file']
+        # if user does not select file, browser also
+        # submit an empty part without filename
+        if file.filename == '':
+            flash('No selected file')
+            return redirect(request.url)
+        if file and allowed_file(file.filename):
+            filename = secure_filename(file.filename)
+            """ os.system("rm ./Demo-test/Backgrounds/*") """
+            file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
+            resp = jsonify(success=True)
+            resp.status_code = 200
+            return resp
+
+
+""" @app.route('/uploadFile', methods=['GET', 'POST'])
+def upload_file():
+    file = request.files['file']
+    filename = secure_filename(file.filename)
+    print(filename)
+    return "none" """
     
 
 
