@@ -11,11 +11,12 @@ export class LaMuseCallService implements OnInit {
   ngOnInit(){
   }
 
-  LaMuseUrl : string = "http://127.0.0.1:5002/LaMuse/";
+  LaMuseUrl : string = "http://127.0.0.1:5002/LaMuse";
   
-  executeLaMuse()
+  executeLaMuse(mode : String)
   {
-    return this.http.get<any>(this.LaMuseUrl);
+    return this.http.get<any>(this.LaMuseUrl+mode);
+    
   }
 
 }

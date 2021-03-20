@@ -9,14 +9,25 @@ export class FileUploadService {
   
   constructor(private http: HttpClient) { }
 
-  uploadFile(file:File){
-
+  uploadBack(file:File){
+    console.log('service upload Back')
     const formData: FormData = new FormData();
     formData.append('file', file, file.name);
   
-    return this.http.post(`${this.uri}/uploadFile`,formData,{
+    return this.http.post(`${this.uri}/uploadBack`,formData,{
+      observe: 'events'
+    })
+  }
+
+  uploadPaint(file:File){
+    console.log('service upload Paint')
+    const formData: FormData = new FormData();
+    formData.append('file', file, file.name);
+  
+    return this.http.post(`${this.uri}/uploadPaint`,formData,{
       reportProgress : true,
       observe: 'events'
     })
   }
+
 }
