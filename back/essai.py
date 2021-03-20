@@ -33,6 +33,13 @@ def run_command(command):
 def index():
     return "Welcome to Test";
 
+@app.route("/weatherReport/", methods = ['GET'])
+def WeatherReport():
+    global weather
+    print(os.listdir())
+    return jsonify([weather])
+
+
 
 @app.route("/LaMuse/", methods = ['GET'])
 def LaMuse():
@@ -54,7 +61,7 @@ def upload_file():
         if file.filename == '':
             flash('No selected file')
             return redirect(request.url)
-        if file and allowed_file(file.filename):
+        if file and allowed_file(file.filename) :
             filename = secure_filename(file.filename)
             """ os.system("rm ./Demo-test/Backgrounds/*") """
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
@@ -63,12 +70,7 @@ def upload_file():
             return resp
 
 
-""" @app.route('/uploadFile', methods=['GET', 'POST'])
-def upload_file():
-    file = request.files['file']
-    filename = secure_filename(file.filename)
-    print(filename)
-    return "none" """
+
     
 
 

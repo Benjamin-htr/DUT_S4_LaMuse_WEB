@@ -18,7 +18,7 @@ export class FilesChoicesComponent implements OnInit {
   constructor(private fileUploadService: FileUploadService) { }
 
   ngOnInit(): void {
-    
+      
   }
 
   onFileChange(event) {
