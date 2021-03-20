@@ -25,3 +25,4 @@ const routes: Routes = [{ path: 'weather', component: EssaiComponent },
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
+
