@@ -9,12 +9,9 @@
             <input type="file" name="fileUpload" (change)="onPaintChange($event)" #myInput2/>
         </p>
         <button (click)="uploadFile()" class="btn btn-primary" [disabled] = "!fileIsUploaded()"> Upload File</button>
-    </div>
-    <p class="progress">
+    </div><br>
+    <div class="progress">
         <div class="progress-bar" role="progressbar" [style.width.%]="progress"></div>
-    </p>
-    <p>
-        <a class = "" routerLink="GenerateImages">Start</a>
-    </p>
-    
+    </div>
+    <a class = "" routerLink="GenerateImages">Start</a>
 </div>
