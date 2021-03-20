@@ -67,6 +67,11 @@ body {
   border-width: 6px;
   padding: 30px 30px;
   box-shadow: none;
+  transform: scale(1.1, 1.1);
+}
+
+.bouton:active {
+  transform: scale(0.9, 0.9);
 }
 
 h1, h2 {
@@ -97,3 +102,5 @@ div:first-child {
   margin-left: auto;
   margin-right: auto;
 }
+
+@import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300';

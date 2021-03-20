@@ -23,3 +23,4 @@ describe('ChoiceComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
