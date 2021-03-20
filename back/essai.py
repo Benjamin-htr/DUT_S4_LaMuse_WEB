@@ -1,5 +1,5 @@
 import os
-from flask import Flask, jsonify, request, flash, redirect, url_for, send_from_directory;
+from flask import Flask, send_file ,jsonify, request, flash, redirect, url_for, send_from_directory;
 from flask_cors import CORS;
 from werkzeug.utils import secure_filename
 
@@ -61,6 +61,17 @@ def upload_file():
             resp = jsonify(success=True)
             resp.status_code = 200
             return resp
+
+
+@app.route('/sendResult', methods=['GET'])
+def get_image():
+    path = "./Demo-test/Interpretations/"
+    dirfiles = os.listdir(path)
+    for image in dirfiles:
+        if (image.endswith(".jpg") or image.endswith(".png")):
+            if image.count('.') == 2:
+                print(image)
+                return send_file(path+image, mimetype='')
 
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])

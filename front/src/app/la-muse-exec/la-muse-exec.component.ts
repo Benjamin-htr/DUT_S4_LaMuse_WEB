@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { LaMuseCallService } from '../services/la-muse-call.service';
+import { GetResultService } from '../services/get-result.service';
 
 @Component({
   selector: 'app-la-muse-exec',
@@ -8,28 +9,35 @@ import { LaMuseCallService } from '../services/la-muse-call.service';
 })
 export class LaMuseExecComponent implements OnInit {
 
-
-  constructor(private rs : LaMuseCallService){}
-
-  
+  source: string = "../../assets/giphy.gif";
+  constructor(private rs : LaMuseCallService, private resultService : GetResultService){}
 
   ngOnInit(): void {
-    this.rs.executeLaMuse()
+    /*this.rs.executeLaMuse()
       .subscribe
         (
-          (response) => 
-          {
-            console.log(response);
-            
-          },
-          (error) =>
-          {
-            console.log("No Data Found" + error);
-          }
+          (	response) => 
+          	{
+            	console.log(response);
+          	},
+          	(error) =>
+          	{
+            	console.log("No Data Found" + error);
+          	}
+        )*/
+        this.resultService.getImage().subscribe(          (	response) => 
+        {
+          console.log(response);
+        },
+        (error) =>
+        {
+          console.log("No Data Found" + error);
+        })
+	}
 
-        )
-  }
-  
+	changeSourceToResult() :void {
+		this.source = "../../../../back/Demo-test/Interpretations/";
+	}
 }
 
 
