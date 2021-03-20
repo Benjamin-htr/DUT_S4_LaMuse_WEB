@@ -12,6 +12,7 @@ import { ChoiceComponent } from './choice/choice.component';
 import { AddToSvgDirective } from './welcome/add-to-svg.directive';
 
 import { FilesChoicesComponent } from './files-choices/files-choices.component';
+import { LaMuseExecCustomComponent } from './la-muse-exec-custom/la-muse-exec-custom.component';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,8 @@ import { FilesChoicesComponent } from './files-choices/files-choices.component';
     AddToSvgDirective,
 
     FilesChoicesComponent,
+
+    LaMuseExecCustomComponent,
   ],
   imports: [
     BrowserModule,

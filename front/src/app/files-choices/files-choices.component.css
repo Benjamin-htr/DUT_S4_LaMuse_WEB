@@ -1,3 +1,11 @@
+body {
+    display: flex;
+    background : url(../../assets/background.png);
+    width : 100vw;
+    height : 100vh;
+}
+
+
 .progress {
     background: rgb(0, 0, 0);
     justify-content: flex-start;
