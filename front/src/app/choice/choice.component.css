@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
+html {
+  height: 100vh;
+  min-width: 500px;
+}
+
 body { 
   background:
   /* Assombrir le background */
@@ -8,6 +15,7 @@ body {
     url(../../assets/background.png);
     background-position: center;
     background-attachment: scroll;
+    background-repeat:repeat-y;
     background-size: cover;
     height : 100vh;
     color: #00EAF8;
@@ -18,11 +26,12 @@ body {
     0 0 40px #0ff,
     0 0 80px #0ff,
     0 0 100px #0ff,
-    0 0 150px #0ff;;
+    0 0 150px #0ff;
+    font-family: 'Raleway', sans-serif;
 }
 
 .bouton {
-  background: #555;
+  background: #00889A;
   border-radius: 30%;
   border-color: #00EAF8;
   border-width: 6px;
@@ -51,6 +60,15 @@ body {
   box-shadow: 0px 0px 40px 5px #0ff;
 }
 
+.bouton:hover {
+  background: #004e59;
+  border-radius: 30%;
+  border-color: #00adb6;
+  border-width: 6px;
+  padding: 30px 30px;
+  box-shadow: none;
+}
+
 h1, h2 {
   margin-top: 0%;
   padding-top: 10%;
@@ -68,6 +86,7 @@ svg {
   margin-right: auto;
   margin-left: auto;
   width: 50%;
+  height: 20%;
 }
 
 div:first-child {
