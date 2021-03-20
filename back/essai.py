@@ -31,7 +31,7 @@ def run_command(command):
 
 @app.route("/", methods=['GET'])
 def index():
-    return "Welcome to Test";
+    return "Welcome to Test"
 
 
 @app.route("/LaMuse/", methods = ['GET'])
@@ -63,7 +63,7 @@ def upload_file():
             return resp
 
 
-@app.route('/sendResult', methods=['GET'])
+@app.route('/sendResult/', methods=['GET'])
 def get_image():
     path = "./Demo-test/Interpretations/"
     dirfiles = os.listdir(path)
@@ -71,8 +71,7 @@ def get_image():
         if (image.endswith(".jpg") or image.endswith(".png")):
             if image.count('.') == 2:
                 print(image)
-                return send_file(path+image, mimetype='')
-
+                return send_file(path+image)
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])
 def upload_file():
