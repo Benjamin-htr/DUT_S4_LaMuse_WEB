@@ -90,8 +90,21 @@ body {
 }
 
 svg {
-  animation : scaleBubble 15s  linear infinite alternate;
+  /* animation : scaleBubble 15s  linear infinite alternate; */
 }
+
+@keyframes scaleBubble {
+  0% {
+    transform: scale(1.00);
+  }
+
+
+  100% {
+    transform: scale(1.20);
+  }
+
+}
+
 
 .catchPr {
     height : 60%;
@@ -183,17 +196,6 @@ h1 {
 
 
 
-@keyframes scaleBubble {
-    0% {
-      transform: scale(1.00);
-    }
-
-
-    100% {
-      transform: scale(1.20);
-    }
-
-  }
 
   
     
