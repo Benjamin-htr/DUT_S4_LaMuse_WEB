@@ -11,9 +11,11 @@ import { FileUploadService } from '../services/file-upload.service';
 export class FilesChoicesComponent implements OnInit {
 
   title : string = 'Generate Images';
-  file : File;
+  Backfile : File;
+  Paintfile : File;
   progress: number = 0;
-  @ViewChild('myInput',{static: true}) myInputVariable: ElementRef;
+  @ViewChild('myInput1',{static: true}) myInputVariable1: ElementRef;
+  @ViewChild('myInput2',{static: true}) myInputVariable2: ElementRef;
 
   constructor(private fileUploadService: FileUploadService) { }
 
@@ -21,16 +23,24 @@ export class FilesChoicesComponent implements OnInit {
       
   }
 
-  onFileChange(event) {
+  onBackChange(event) {
     if (event.target.files.length > 0) {
-      this.file = event.target.files[0];
+      this.Backfile = event.target.files[0];
+
+    }
+  }
+
+  onPaintChange(event) {
+    if (event.target.files.length > 0) {
+      this.Paintfile = event.target.files[0];
     }
   }
 
   uploadFile(){
-    this.fileUploadService.uploadFile(this.file)
+    console.log(this.Backfile)
+    console.log(this.Paintfile)
+    this.fileUploadService.uploadBack(this.Backfile)
     .subscribe((event: HttpEvent<any>) => {
-        this.resetFile();
         switch(event.type){
             case HttpEventType.UploadProgress:
               this.progress = Math.round(event.loaded / event.total * 100);
@@ -47,12 +57,35 @@ export class FilesChoicesComponent implements OnInit {
               }
         }
     });
+    this.fileUploadService.uploadPaint(this.Paintfile)
+    .subscribe((event: HttpEvent<any>) => {
+        this.resetFile(); 
+        switch(event.type){
+          
+            case HttpEventType.UploadProgress:
+              this.progress = Math.round(event.loaded / event.total * 100);
+              console.log(this.progress);
+              
+              break;
+            case HttpEventType.ResponseHeader:
+              if(event.status == 200){
+                console.log("File was uploaded successfully");  
+                
+                 
+              }
+              if(event.status == 500){
+                console.log("Error while uploading file");
+              }
+        }
+    });
+
+
   }
 
   fileIsUploaded()
   {
     let result = false;
-    if(this.file && this.file != null )
+    if(this.Backfile && this.Backfile != null && this.Paintfile && this.Paintfile != null)
     {
       result = true;
     }
@@ -61,8 +94,10 @@ export class FilesChoicesComponent implements OnInit {
 
   resetFile()
   {
-    this.myInputVariable.nativeElement.value = "";
-    this.file = null;
+    this.myInputVariable1.nativeElement.value = "";
+    this.myInputVariable2.nativeElement.value = "";
+    this.Backfile = null;
+    this.Paintfile = null;
     //this.progress = 0;
   }
 }
