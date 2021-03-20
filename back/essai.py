@@ -63,8 +63,10 @@ def LaMuse():
     os.system("cp "+default_paint_path+paint_image+' '+paint_path)
 
     command = 'python3 -m LaMuse.LaMuse --nogui --input_dir '+paint_path+' --output_dir '+result_path+' --background_dir '+back_path
-    proc = run_command(command)
-    return "Finish"
+    os.system(command)
+    resp = jsonify(success=True)
+    resp.status_code = 200
+    return resp
 
 
 @app.route('/uploadBack', methods=['GET', 'POST'])
