@@ -82,8 +82,11 @@ def upload_file():
             return redirect(request.url)
         if file and allowed_file(file.filename) :
             filename = secure_filename(file.filename)
-            """ os.system("rm ./Demo-test/Backgrounds/*") """
-            app.config['UPLOAD_FOLDER'] = "./Demo-test/"
+            os.system("rm -f "+back_path+'*')
+            os.system("rm -f "+paint_path+'*')
+            os.system("rm -f "+result_path+'*')
+            
+            app.config['UPLOAD_FOLDER'] = back_path
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             resp = jsonify(success=True)
             resp.status_code = 200
@@ -92,14 +95,13 @@ def upload_file():
 
 
 @app.route('/sendResult/', methods=['GET'])
-def get_image():
-    path = "./Demo-test/Interpretations/"
-    dirfiles = os.listdir(path)
+def get_image() :
+    dirfiles = os.listdir(result_path)
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
             if image.count('.') == 2:
                 print(image)
-                return send_file(path+image, mimetype='')
+                return send_file(result_path+image, mimetype='')
 
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])
