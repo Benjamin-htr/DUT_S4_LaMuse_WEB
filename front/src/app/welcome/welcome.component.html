@@ -1,5 +1,6 @@
+
 <div class="back">
-    <svg height="100%" width="100%" add>
+    <svg height="100%" width="100%" (click)="changeColor()" add>
         <defs>
             <filter id="light-blue" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
                 <feFlood flood-opacity="0" result="BackgroundImageFix"/>
@@ -208,7 +209,6 @@
             </filter>
             
         </defs>
-        <circle class="node light-blue" cx="700" cy="200" r="50" node></circle>
             
     </svg>
 </div>
@@ -218,7 +218,7 @@
             <span class="block"></span>
             <h1>Are you looking for Inspiration ? Let me guide you</h1>
         </div>
-        <a class = "choice btn btn-2" routerLink="mode-choice">Start</a>
+        <a class = "choice btn btn-2" routerLink="mode-choice" (mouseover)='changeColor()'>Start</a>
     </div>
 </body>
 
