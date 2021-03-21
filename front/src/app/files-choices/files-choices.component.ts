@@ -16,6 +16,7 @@ export class FilesChoicesComponent implements OnInit {
   progress: number = 0;
   @ViewChild('myInput1',{static: true}) myInputVariable1: ElementRef;
   @ViewChild('myInput2',{static: true}) myInputVariable2: ElementRef;
+  display : boolean = false;
 
   constructor(private fileUploadService: FileUploadService) { }
 
@@ -70,7 +71,7 @@ export class FilesChoicesComponent implements OnInit {
             case HttpEventType.ResponseHeader:
               if(event.status == 200){
                 console.log("File was uploaded successfully");  
-                
+                this.display = true;
                  
               }
               if(event.status == 500){

@@ -1,8 +1,30 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+
 body {
     display: flex;
-    background : url(../../assets/background.png);
-    width : 100vw;
-    height : 100vh;
+    background : 
+      linear-gradient(
+        rgba(0, 0, 0, 0.6), 
+        rgba(0, 0, 0, 0.6)
+      ),
+      url(../../assets/background.png);
+      width : 100vw;
+      height : 100vh;
+      background-position: center;
+      background-attachment: scroll;
+      background-repeat:repeat-y;
+      background-size: cover;
+      height : 100vh;
+      color: #00EAF8;
+      text-align: center;
+      font-size: 150%;
+      text-shadow:
+      0 0 20px #fff,
+      0 0 40px #0ff,
+      0 0 80px #0ff,
+      0 0 100px #0ff,
+      0 0 150px #0ff;
+      font-family: 'Raleway', sans-serif;
 }
 div.formulaire
 {
@@ -37,10 +59,7 @@ p.second-p
 
 
 .progress {
-<<<<<<< HEAD
-=======
     margin-top: 2%;
->>>>>>> cda5dceb08f977cca097884a73de5a15760eaccc
     background: rgb(255, 255, 255);
     justify-content: flex-start;
     border-radius: 100px;
@@ -50,19 +69,14 @@ p.second-p
     display: flex;
     height: 40px;
     width: 100%;
+    box-shadow: 2px 2px 40px rgb(3, 190, 150);
   }
   
   .progress-bar {
-<<<<<<< HEAD
-    box-shadow: 0 10px 40px -10px rgb(0, 0, 0);
-    border-radius: 100px;
-    background: rgb(74, 12, 219);
-=======
     
     box-shadow: 0 10px 40px -10px rgb(0, 0, 0);
     border-radius: 100px;
     background: rgb(49, 190, 233);
->>>>>>> cda5dceb08f977cca097884a73de5a15760eaccc
     height: 30px;
     
   }
@@ -70,3 +84,30 @@ p.second-p
   {
     margin-top: 2%;
   }
+
+  .choice {
+    display:inline-block;
+    padding:0.35em 1.2em;
+    border:0.1em solid #FFFFFF;
+    margin:0 0.3em 0.3em 0;
+    border-radius:0.12em;
+    box-sizing: border-box;
+    text-decoration:none;
+    font-family:'Roboto',sans-serif;
+    font-weight:300;
+    color:#FFFFFF;
+    text-align:center;
+    transition: all 0.2s;
+    margin-top: 5%;
+    
+  }
+
+  a:hover{
+    color: aqua;
+    border-color: rgb(255, 255, 255);
+    border-radius:50%;
+    box-shadow: 2px 2px 45px aqua;
+    
+  }
+  
+  @import 'https://fonts.googleapis.com/css?family=Source+Sans+Pro:300';
