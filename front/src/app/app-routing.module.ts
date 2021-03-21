@@ -1,5 +1,4 @@
 import { NgModule } from '@angular/core';
-import { EssaiComponent } from './essai/essai.component';
 import { LaMuseExecComponent } from './la-muse-exec/la-muse-exec.component';
 import { WelcomeComponent } from './welcome/welcome.component';
 import { ChoiceComponent } from './choice/choice.component';
@@ -8,7 +7,7 @@ import { LaMuseExecCustomComponent } from './la-muse-exec-custom/la-muse-exec-cu
 import { RouterModule, Routes } from '@angular/router';
 //import { AppComponent } from './app.component';
 
-const routes: Routes = [{ path: 'weather', component: EssaiComponent },
+const routes: Routes = [
                       { path: 'GenerateImages', component: LaMuseExecComponent },
                       { path: 'welcome', component: WelcomeComponent },
                       { path: 'mode-choice', component: ChoiceComponent },

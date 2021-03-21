@@ -1,3 +1,6 @@
+//essai qui permetteait d'intercepter toutes les requêtes http faite depuis le serveur front et désactiver 
+//l'utilisation du cache par le naviguateur :
+
 /* import { HttpHandler, HttpInterceptor, HttpRequest, HttpEvent } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
