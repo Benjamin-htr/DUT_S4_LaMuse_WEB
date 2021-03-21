@@ -16,7 +16,7 @@ Nous utiliserons le mini-framework python flask pour gérér le coté serveur et
 	- pip install flask_cors
 
 - lancer le serveur flask :  
-	py essai.py
+	py back.py
 
 ## front :
 - installer le module suivant :  
