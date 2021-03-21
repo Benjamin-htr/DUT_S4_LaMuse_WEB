@@ -40,7 +40,7 @@ export class LaMuseExecCustomComponent implements OnInit {
           (	response) => 
           	{
               console.log(response);
-              this.result_src = 'http://127.0.0.1:5002/sendResult/'
+              this.getImageFromService(this.result_src)
               this.display = true;
               this.txt1 = "Image is now created !"
               //localStorage.removeItem('foo') 
