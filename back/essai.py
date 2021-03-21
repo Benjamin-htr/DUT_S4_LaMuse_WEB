@@ -38,7 +38,7 @@ def run_command(command):
 
 @app.route("/", methods=['GET'])
 def index():
-    return "Welcome to Test"
+    return "Welcome to Test";
 
 @app.route("/weatherReport/", methods = ['GET'])
 def WeatherReport():
@@ -120,27 +120,16 @@ def upload_Paint():
             return resp
 
 
-<<<<<<< HEAD
-@app.route('/sendResult/', methods=['GET'])
-def get_image():
-    path = "./Demo-test/Interpretations/"
-    dirfiles = os.listdir(path)
-=======
 
 @app.route('/sendResult/', methods=['GET'])
 def get_image() :
     dirfiles = os.listdir(result_path)
->>>>>>> 3668c44234a8945c1da0e83c2f24e1b9bb7f90cf
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
             if image.count('.') == 2:
                 print(image)
-<<<<<<< HEAD
-                return send_file(path+image)
-=======
                 return send_file(result_path+image, mimetype='')
 
->>>>>>> 3668c44234a8945c1da0e83c2f24e1b9bb7f90cf
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])
 def upload_file():

@@ -26,10 +26,7 @@ export class LaMuseExecComponent implements OnInit {
                 console.log("No Data Found" + error);
               }
         )
-        
-  
     }
-
     changeSourceToResult() :void {
         this.source = "../../../../back/Demo-test/Interpretations/";
     }
