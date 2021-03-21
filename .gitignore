@@ -254,6 +254,8 @@ dmypy.json
 !back/Demo-test/Default-Paintings/800px-Piero_della_Francesca_042.jpg
 !back/Demo-test/Paintings/Vermeer_-_The_Milkmaid.jpg
 !back/Demo-test/Backgrounds/0.jpg
+!front/src/assets/background.png
+!front/src/assets/giphy.gif
 
 # End of https://www.toptal.com/developers/gitignore/api/images
 

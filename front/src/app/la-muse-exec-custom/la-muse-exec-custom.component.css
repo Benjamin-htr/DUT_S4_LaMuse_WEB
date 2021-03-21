@@ -35,10 +35,26 @@ div {
     margin-top: -20px;
     font-size: 75%;
 }
-.gif, .result {
-    display: block;
-    margin: auto;
-    margin-top: 20vh;
-    border-radius: 15%;
-    width: 50vh;
+
+.images {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width : 80vw;  
+}
+
+.back {
+    max-width : 50%;
+    margin-right: 20px;
+    max-height: 60vh;
+}
+
+.paint {
+    max-width : 50%;
+    max-height: 60vh;
+}
+
+.result {
+    max-width : 60%;
+    max-height: 60vh;
 }
