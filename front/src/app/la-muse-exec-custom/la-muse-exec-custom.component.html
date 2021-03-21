@@ -9,6 +9,7 @@
         </div>
         <div class = "images" *ngIf="display">
             <img class="result" [src]="result_src" >
+            <a [href]="result_src" download>dowload</a>
         </div>
         <p>{{ txt1 }}</p>
         <p class="wait" *ngIf="!display">Please wait</p>

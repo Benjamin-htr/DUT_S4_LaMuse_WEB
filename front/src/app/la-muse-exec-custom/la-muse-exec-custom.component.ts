@@ -24,7 +24,7 @@ export class LaMuseExecCustomComponent implements OnInit {
     ngOnInit(): void {
         this.getImageFromService(this.back_src)
         this.getImageFromService(this.paint_src)
-        
+        this.display = true;
         /* this.back_src = 'http://127.0.0.1:5002/sendBackImg/'
         this.paint_src = 'http://127.0.0.1:5002/sendPaintImg/' */
 
@@ -34,7 +34,7 @@ export class LaMuseExecCustomComponent implements OnInit {
           console.log('refresh')
         }  */
         
-
+        /*
         this.rs.executeLaMuse('Custom').subscribe
         (
           (	response) => 
@@ -50,7 +50,8 @@ export class LaMuseExecCustomComponent implements OnInit {
               console.log("No Data Found" + error);
               //localStorage.removeItem('foo') 
           	}
-        )
+            
+        )*/
       } 
 
       /* ngOnDestroy(): void {
