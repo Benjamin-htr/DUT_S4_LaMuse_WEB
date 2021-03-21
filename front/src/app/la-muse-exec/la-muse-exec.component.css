@@ -29,18 +29,28 @@ body {
 
 div {
     margin: auto;
-    padding-top: 50px;
+    padding-top: 20px;
 }
 .wait {
     margin-top: -20px;
     font-size: 75%;
 }
-.gif, .result {
+
+.result {
     display: block;
     margin: auto;
-    margin-top: 10vh;
+    margin-top: 5vh;
     border-radius: 15%;
-    width: 50vh;
+    max-width : 50vh;
+    max-height : 60vh;
+}
+
+.gif {
+  display: block;
+  margin: auto;
+  margin-top: 20vh;
+  border-radius: 15%;
+  width : 50vh;
 }
 
   a {

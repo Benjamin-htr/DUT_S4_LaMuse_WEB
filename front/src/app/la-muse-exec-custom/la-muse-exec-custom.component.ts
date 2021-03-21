@@ -23,16 +23,7 @@ export class LaMuseExecCustomComponent implements OnInit {
 
     ngOnInit(): void {
         this.getImageFromService(this.back_src)
-        this.getImageFromService(this.paint_src)
-        /* this.back_src = 'http://127.0.0.1:5002/sendBackImg/'
-        this.paint_src = 'http://127.0.0.1:5002/sendPaintImg/' */
-
-        /* if (!localStorage.getItem('foo')) { 
-          localStorage.setItem('foo', 'no reload') 
-          document.location.reload();
-          console.log('refresh')
-        }  */
-        
+        this.getImageFromService(this.paint_src)  
         
         this.rs.executeLaMuse('Custom').subscribe
         (
@@ -41,24 +32,18 @@ export class LaMuseExecCustomComponent implements OnInit {
               console.log(response);
               this.getImageFromService(this.result_src)
               this.display = true;
-              this.txt1 = "Image is now created !"
-              //localStorage.removeItem('foo') 
+              this.txt1 = "Image is now created !"  
           	},
           	(error) =>
           	{
               console.log("No Data Found" + error);
-              //localStorage.removeItem('foo') 
+              
           	}
             
         )
       } 
 
-      /* ngOnDestroy(): void {
-          localStorage.removeItem('foo')
-          console.log('destruct')
-      } */
-
-      //ne fonctionne pas avec l'image renvoyé par notre serveur :
+      
     createImageFromBlob(image: Blob) : void {
       let reader = new FileReader();
       reader.addEventListener("load", () => {

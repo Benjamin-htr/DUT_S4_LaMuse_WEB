@@ -4,7 +4,6 @@ import {HTTP_INTERCEPTORS} from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { EssaiComponent } from './essai/essai.component';
 
 import { HttpClientModule } from '@angular/common/http';
 import { LaMuseExecComponent } from './la-muse-exec/la-muse-exec.component';
@@ -19,7 +18,6 @@ import { LaMuseExecCustomComponent } from './la-muse-exec-custom/la-muse-exec-cu
 @NgModule({
   declarations: [
     AppComponent,
-    EssaiComponent,
     LaMuseExecComponent,
     WelcomeComponent,
     ChoiceComponent,
