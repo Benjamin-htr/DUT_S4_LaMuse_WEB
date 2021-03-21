@@ -156,7 +156,7 @@ def get_image() :
         if (image.endswith(".jpg") or image.endswith(".png")):
             if image.count('.') == 2 :
                 print(image)
-                return send_file(result_path+image, mimetype='')
+                return send_file(result_path+image, mimetype='image/jpg')
 
 @app.route('/sendBackImg/', methods=['GET'])
 def get_back_img() :

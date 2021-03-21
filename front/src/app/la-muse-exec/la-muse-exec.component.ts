@@ -9,7 +9,9 @@ import { LaMuseCallService } from '../services/la-muse-call.service';
 })
 export class LaMuseExecComponent implements OnInit {
 
-  source: string = "../../assets/giphy.gif";
+  display : boolean = false;
+  result_src : string = 'http://127.0.0.1:5002/sendResult/';
+
   constructor(private rs : LaMuseCallService){}
 
   ngOnInit(): void {
@@ -19,7 +21,7 @@ export class LaMuseExecComponent implements OnInit {
           (	response) => 
           	{
               console.log(response);
-              this.source = 'http://127.0.0.1:5002/sendResult/'
+              this.display = true;
           	},
           	(error) =>
           	{
@@ -30,9 +32,6 @@ export class LaMuseExecComponent implements OnInit {
   
 	}
 
-	changeSourceToResult() :void {
-		this.source = "../../../../back/Demo-test/Interpretations/";
-	}
 }
 
 
