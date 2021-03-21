@@ -7,9 +7,11 @@
         </div>
         <div *ngIf="display">
             <img class="result" [src]="result_src">
-            <a [href]="result_src" download>dowload</a>
+            <a class="big-button" [href]="result_src" download>dowload</a>
         </div>
-        <p>The image is being created  ...</p>
-        <p class="wait">Please wait</p>
+        <p *ngIf="!display">The image is being created  ...</p>
+        <p *ngIf="!display" class="wait">Please wait</p>
+        <p *ngIf="display">Image is now created !</p>
+        <a class = "link" routerLink="mode-choice" *ngIf="display">Return to mode choice</a>
     </body>
 </html>
