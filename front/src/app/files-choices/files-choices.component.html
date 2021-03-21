@@ -1,19 +1,22 @@
 <body>
     <div class="formulaire">
         <div class="form-group">
-            <p>
+            <p class="first-p">
                 <label>Choose a background image :</label><br>
                 <input type="file" name="fileUpload" (change)="onBackChange($event)" #myInput1/>
             </p>
-            <p>
+            <p class="second-p">
                 <label>Choose a painting image :</label><br>
                 <input type="file" name="fileUpload" (change)="onPaintChange($event)" #myInput2/>
             </p>
-            <button (click)="uploadFile()" class="btn btn-primary" [disabled] = "!fileIsUploaded()"> Upload File</button>
+            
         </div><br>
+        <div class="div-button">
+            <button (click)="uploadFile()" class="btn btn-primary" [disabled] = "!fileIsUploaded()"> Upload File</button>
+        </div>
         <div class="progress">
             <div class="progress-bar" role="progressbar" [style.width.%]="progress"></div>
         </div>
-        <a class = "" routerLink="CustomGeneration">Start</a>
+        <a class = "start" routerLink="CustomGeneration">Start</a>
     </div>
 </body>

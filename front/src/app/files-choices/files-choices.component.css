@@ -4,10 +4,41 @@ body {
     width : 100vw;
     height : 100vh;
 }
+div.formulaire
+{
+  width: 60vw;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: auto;
+  margin-bottom: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+div.form-group
+{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+}
+p.first-p
+{
+  margin-left:auto;
+  margin-right: auto;
+}
+
+p.second-p
+{
+  margin-left:auto;
+  margin-right: auto;
+}
 
 
 .progress {
-    background: rgb(0, 0, 0);
+    margin-top: 2%;
+    background: rgb(255, 255, 255);
     justify-content: flex-start;
     border-radius: 100px;
     align-items: center;
@@ -15,13 +46,18 @@ body {
     padding: 0 5px;
     display: flex;
     height: 40px;
-    width: 500px;
+    width: 100%;
   }
   
   .progress-bar {
-    box-shadow: 0 10px 40px -10px #fff;
+    
+    box-shadow: 0 10px 40px -10px rgb(0, 0, 0);
     border-radius: 100px;
-    background: #fff;
+    background: rgb(49, 190, 233);
     height: 30px;
     
+  }
+  a.start
+  {
+    margin-top: 2%;
   }
