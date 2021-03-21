@@ -55,5 +55,6 @@ div {
 }
 
 .result {
-    width : 60%;
+    max-width : 60%;
+    max-height: 60vh;
 }

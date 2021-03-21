@@ -14,7 +14,7 @@ import { AddToSvgDirective } from './welcome/add-to-svg.directive';
 
 import { FilesChoicesComponent } from './files-choices/files-choices.component';
 import { LaMuseExecCustomComponent } from './la-muse-exec-custom/la-muse-exec-custom.component';
-import { Interceptor } from './interceptor';
+//import { Interceptor } from './interceptor';
 
 @NgModule({
   declarations: [
@@ -34,11 +34,11 @@ import { Interceptor } from './interceptor';
     AppRoutingModule,
     HttpClientModule
   ],
-  providers: [{
+  providers: [/* {
     provide: HTTP_INTERCEPTORS,
     useClass: Interceptor,
     multi: true
-  }],
+  } */],
   
   bootstrap: [AppComponent]
 })

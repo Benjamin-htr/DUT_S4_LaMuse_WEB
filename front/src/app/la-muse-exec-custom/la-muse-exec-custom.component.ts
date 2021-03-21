@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { LaMuseCallService } from '../services/la-muse-call.service';
-import { HttpClient } from '@angular/common/http';
+import { ImageService } from '../services/image.service';
 
 @Component({
   selector: 'app-la-muse-exec-custom',
@@ -9,22 +9,28 @@ import { HttpClient } from '@angular/common/http';
 })
 export class LaMuseExecCustomComponent implements OnInit {
 
-    back_src: string;
-    paint_src : string;
-    result_src : string;
+    back_src: string = 'http://127.0.0.1:5002/sendBackImg/';
+    paint_src : string = 'http://127.0.0.1:5002/sendPaintImg/';
+    result_src : string = 'http://127.0.0.1:5002/sendResult/';
     display : boolean = false;
 
-    constructor(private rs : LaMuseCallService, private http: HttpClient) { }
+    imageToShow: any;
+    isImageLoading: boolean;
+
+    constructor(private rs : LaMuseCallService, private imageService: ImageService) { }
 
     ngOnInit(): void {
-        this.back_src = 'http://127.0.0.1:5002/sendBackImg/'
-        this.paint_src = 'http://127.0.0.1:5002/sendPaintImg/'
+        this.getImageFromService(this.back_src)
+        this.getImageFromService(this.paint_src)
+        this.display = true;
+        /* this.back_src = 'http://127.0.0.1:5002/sendBackImg/'
+        this.paint_src = 'http://127.0.0.1:5002/sendPaintImg/' */
 
-        if (!localStorage.getItem('foo')) { 
+        /* if (!localStorage.getItem('foo')) { 
           localStorage.setItem('foo', 'no reload') 
           document.location.reload();
           console.log('refresh')
-        } 
+        }  */
         
 
         /* this.rs.executeLaMuse('Custom').subscribe
@@ -34,21 +40,44 @@ export class LaMuseExecCustomComponent implements OnInit {
               console.log(response);
               this.result_src = 'http://127.0.0.1:5002/sendResult/'
               this.display = true;
-              localStorage.removeItem('foo') 
+              //localStorage.removeItem('foo') 
           	},
           	(error) =>
           	{
               console.log("No Data Found" + error);
-              localStorage.removeItem('foo') 
+              //localStorage.removeItem('foo') 
           	}
-        )  */
-      }
+        ) */
+      } 
 
-      ngOnDestroy(): void {
+      /* ngOnDestroy(): void {
           localStorage.removeItem('foo')
           console.log('destruct')
-      }
+      } */
+
+      //ne fonctionne pas avec l'image renvoyé par notre serveur :
+    createImageFromBlob(image: Blob) : void {
+      let reader = new FileReader();
+      reader.addEventListener("load", () => {
+         this.imageToShow = reader.result;
+      }, false);
     
+      if (image) {
+         reader.readAsDataURL(image);
+      }
+     }
+    
+     getImageFromService(route : string) {
+         this.isImageLoading = true;
+         this.imageService.getImage(route).subscribe(data => {
+           this.createImageFromBlob(data);
+           this.isImageLoading = false;
+         }, error => {
+           this.isImageLoading = false;
+           console.log(error);
+         });
+      }
+  
 
         
     

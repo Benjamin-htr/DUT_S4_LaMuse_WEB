@@ -15,6 +15,17 @@ UPLOAD_FOLDER = './Demo-test'
 app = Flask(__name__)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 app.secret_key = b'_5#y2L"F4Q8z\n\xec]/'
+@app.after_request
+def add_header(response):
+    """
+    Add headers to both force latest IE rendering engine or Chrome Frame,
+    and also to cache the rendered page for 10 minutes.
+    """
+    response.headers['X-UA-Compatible'] = 'IE=Edge,chrome=1'
+    response.headers['Cache-Control'] = 'public, max-age=0'
+    return response
+
+
 # api=Api(app)
 CORS(app, #allow_headers = 'http://localhost:4200/'
 )
@@ -153,7 +164,7 @@ def get_back_img() :
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
             print(image)
-            return send_file(back_path+image, mimetype='')
+            return send_file(back_path+image, mimetype='image/jpg')
     
     #return send_file(back_path+image, mimetype='')
 
@@ -163,7 +174,7 @@ def get_paint_img() :
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
             print(image)
-            return send_file(paint_path+image, mimetype='')
+            return send_file(paint_path+image, mimetype='image/jpg')
 
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])

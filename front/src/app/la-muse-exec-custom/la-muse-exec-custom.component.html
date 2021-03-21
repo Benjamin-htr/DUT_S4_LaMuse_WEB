@@ -4,11 +4,11 @@
 <html>
     <body>
         <div class = "images" *ngIf="!display">
-            <img class="back" [src]="back_src">
+            <img class="back" [src]="back_src" >
             <img class="paint" [src]="paint_src">
         </div>
         <div class = "images" *ngIf="display">
-            <img class="result" [src]="result_src">
+            <img class="result" [src]="result_src" >
         </div>
         <p>The image is being created  ...</p>
         <p class="wait">Please wait</p>
