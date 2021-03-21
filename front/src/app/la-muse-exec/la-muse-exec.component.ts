@@ -15,10 +15,11 @@ export class LaMuseExecComponent implements OnInit {
   constructor(private rs : LaMuseCallService){}
 
   ngOnInit(): void {
+    /*
     this.rs.executeLaMuse('Default')
       .subscribe
         (
-          (    response) => 
+          (response) => 
               {
               console.log(response);
               this.result_src = 'http://127.0.0.1:5002/sendResult/'
@@ -28,9 +29,7 @@ export class LaMuseExecComponent implements OnInit {
               {
                 console.log("No Data Found" + error);
               }
-        )
-        
-  
+        )*/
+        this.display = true;
     }
-
 }

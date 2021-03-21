@@ -2,11 +2,12 @@
     <head>
     </head>
     <body>
-        <div>
-            <img class="gif" src="../../assets/giphy.gif" *ngIf="!display">
+        <div *ngIf="!display">
+            <img class="gif" src="../../assets/giphy.gif">
         </div>
-        <div>
-            <img class="result" [src]="result_src" *ngIf="display">
+        <div *ngIf="display">
+            <img class="result" [src]="result_src">
+            <a [href]="result_src" download>dowload</a>
         </div>
         <p>The image is being created  ...</p>
         <p class="wait">Please wait</p>
