@@ -156,7 +156,7 @@ def get_image() :
         if (image.endswith(".jpg") or image.endswith(".png")):
             if image.count('.') == 2 :
                 print(image)
-                return send_file(result_path+image, mimetype='image/jpg')
+                return send_file(result_path+image, as_attachment=True, attachment_filename=image, mimetype='image/jpg')
 
 @app.route('/sendBackImg/', methods=['GET'])
 def get_back_img() :
@@ -164,7 +164,7 @@ def get_back_img() :
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
             print(image)
-            return send_file(back_path+image, mimetype='image/jpg')
+            return send_file(back_path+image, as_attachment=True, attachment_filename=image, mimetype='image/jpg')
     
     #return send_file(back_path+image, mimetype='')
 
@@ -174,7 +174,7 @@ def get_paint_img() :
     for image in dirfiles:
         if (image.endswith(".jpg") or image.endswith(".png")):
             print(image)
-            return send_file(paint_path+image, mimetype='image/jpg')
+            return send_file(paint_path+image, as_attachment=True, attachment_filename=image, mimetype='image/jpg')
 
 
 """ @app.route('/uploadFile', methods=['GET', 'POST'])

@@ -21,6 +21,7 @@ export class LaMuseExecComponent implements OnInit {
           (	response) => 
           	{
               console.log(response);
+              this.result_src = 'http://127.0.0.1:5002/sendResult/'
               this.display = true;
           	},
           	(error) =>
