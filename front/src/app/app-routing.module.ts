@@ -19,7 +19,8 @@ const routes: Routes = [{ path: 'weather', component: EssaiComponent },
                       {path: 'mode-choice/weather', redirectTo: 'weather', pathMatch: 'full'},
                       {path: 'mode-choice/GenerateImages', redirectTo: 'GenerateImages', pathMatch: 'full'},
                       {path: 'mode-choice/files-choices', redirectTo: 'files-choices', pathMatch: 'full'},
-                      {path: 'files-choices/CustomGeneration', redirectTo: 'CustomGeneration', pathMatch: 'full'}
+                      {path: 'files-choices/CustomGeneration', redirectTo: 'CustomGeneration', pathMatch: 'full'},
+                      {path: 'CustomGeneration/mode-choice', redirectTo: 'mode-choice', pathMatch: 'full'}
                     ];
 
 

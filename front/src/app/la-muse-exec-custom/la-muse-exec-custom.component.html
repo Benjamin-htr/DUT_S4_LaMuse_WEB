@@ -10,7 +10,8 @@
         <div class = "images" *ngIf="display">
             <img class="result" [src]="result_src" >
         </div>
-        <p>The image is being created  ...</p>
-        <p class="wait">Please wait</p>
+        <p>{{ txt1 }}</p>
+        <p class="wait" *ngIf="!display">Please wait</p>
+        <a class = "link" routerLink="mode-choice" *ngIf="display">Return to mode choice</a>
     </body>
 </html>
