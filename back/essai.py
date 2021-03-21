@@ -61,6 +61,7 @@ def WeatherReport():
 @app.route("/LaMuseDefault", methods = ['GET'])
 def LaMuseDefault():
     os.system("export TFHUB_CACHE_DIR=./tmp")
+    os.system("mkdir -p ./Demo-test/Backgrounds/ ./Demo-test/Paintings/")
     os.system("rm -f "+back_path+'*')
     os.system("rm -f "+paint_path+'*')
     os.system("rm -f "+result_path+'*')
@@ -83,6 +84,7 @@ def LaMuseDefault():
 def LaMuseCustom():
     print('CUSTOM')
     os.system("export TFHUB_CACHE_DIR=./tmp")
+    os.system("mkdir -p ./Demo-test/Backgrounds/ ./Demo-test/Paintings/")
     os.system("rm -f "+result_path+'*')
     back_img = os.listdir(back_path)[0]
     print(back_img)
