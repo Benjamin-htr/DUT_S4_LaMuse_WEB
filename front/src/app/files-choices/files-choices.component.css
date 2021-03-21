@@ -8,6 +8,7 @@ html {
   background-position: center;
   background-attachment: scroll;
   background-repeat:repeat-y;
+  -webkit-background-size: cover;
   background-size: cover;
   height : 100vh;
   color: #00EAF8;
@@ -28,16 +29,15 @@ body {
 
 div {
   margin: auto;
-  /* padding-top: 50px; */
 }
 .wait {
-  margin-top: -20px;
+  /* margin-top: -20px; */
   font-size: 75%;
 }
 
 
 .progress {
-    background: rgb(0, 0, 0);
+    background: rgb(255, 255, 255);
     justify-content: flex-start;
     border-radius: 100px;
     align-items: center;
@@ -49,9 +49,9 @@ div {
   }
   
   .progress-bar {
-    box-shadow: 0 10px 40px -10px #fff;
+    box-shadow: 0 10px 40px -10px rgb(0, 0, 0);
     border-radius: 100px;
-    background: #fff;
+    background: rgb(74, 12, 219);
     height: 30px;
     
   }
